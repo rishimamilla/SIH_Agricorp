@@ -1,5 +1,5 @@
 import React from "react";
-import "./CropDiseases.css"
+import "./CropDiseases.css";
 import { NavigationBar } from "../../components";
 const CropDiseases = () => {
   // Sample data for crop diseases
@@ -88,32 +88,31 @@ const CropDiseases = () => {
     },
   ];
 
-    return (
-        <>
-            <NavigationBar/>
-    <div className="crop-diseases-container">
-      <h1>Crop Diseases and Their Cures</h1>
-      {diseases.map((disease, index) => (
-        <div key={index} className="disease-card">
-          <h2>{disease.name}</h2>
-          <h3>Symptoms:</h3>
-          <ul>
-            {disease.symptoms.map((symptom, i) => (
-              <li key={i}>{symptom}</li>
-            ))}
-          </ul>
-          <h3>Identification:</h3>
-          <p>{disease.identification}</p>
-          <h3>Cures:</h3>
-          <ul>
-            {disease.cures.map((cure, j) => (
-              <li key={j}>{cure}</li>
-            ))}
-          </ul>
-        </div>
-      ))}
-            </div>
-            </>
+  return (
+    <>
+      <div className="crop-diseases-container">
+        <h1>Crop Diseases and Their Cures</h1>
+        {diseases.map((disease, index) => (
+          <div key={index} className="disease-card">
+            <h2>{disease.name}</h2>
+            <h3>Symptoms:</h3>
+            <ul>
+              {disease.symptoms.map((symptom, i) => (
+                <li key={i}>{symptom}</li>
+              ))}
+            </ul>
+            <h3>Identification:</h3>
+            <p>{disease.identification}</p>
+            <h3>Cures:</h3>
+            <ul>
+              {disease.cures.map((cure, j) => (
+                <li key={j}>{cure}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
