@@ -15,6 +15,10 @@ import {
   PasswordResetPage,
 } from "./pages";
 import { NavigationBar } from "./components";
+import Weather from "./pages/Weather/Weather";
+import CropDiseases from "./pages/CropDiseases/CropDiseases";
+import About from "./pages/About/About";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   return (
@@ -29,6 +33,9 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgotPassword" element={<ForgotPasswordPage />} />
+        <Route path="/weather" element={<Weather />} />
+        <Route path="/diseases" element={<CropDiseases />} />
+        <Route path="/about" element={<About />} />
         <Route
           path="/passwordReset/:resetToken"
           element={<PasswordResetPage />}
@@ -38,8 +45,10 @@ const App = () => {
         <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
 
+
       {/* Remember to render the ToastContainer once in your application tree. Rendering it in the application root would be the best bet */}
       <ToastContainer />
+      <Footer/>
     </>
   );
 };

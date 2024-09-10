@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import Webcam from "react-webcam";
 import axios from "axios";
+import NavigationBar from "../NavigationBar/NavigationBar";
+import IMAGES from "../../assets";
 
 const ImageUploader = () => {
   const [image, setImage] = useState(null);
@@ -50,38 +52,33 @@ const ImageUploader = () => {
 
   const styles = {
     header: {
-      top: 0,
-      left: 0,
-      width: "100%",
-      backgroundColor: "#ffffff",
-      padding: "10px",
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
-      zIndex: 1000, // Ensures it stays above other content
+      color: "#000",
+      padding: "20px",
       textAlign: "center",
-      borderRadius: "0 0 10px 10px", // Rounded corners at the bottom only
+      borderRadius: "0 0 15px 15px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
     },
     container: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "center",
-      height: "calc(100vh - 60px)", // Adjust height to account for fixed header
-      backgroundColor: "#e9ecef", // Light background color
+      height: "calc(100vh - 120px)", // Adjust height to account for fixed header
       padding: "20px",
-      marginTop: "60px", // Space for the fixed header
-      boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
-      borderRadius: "10px", // Rounded corners
+      marginTop: "20px",
+      borderRadius: "15px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
     },
     button: {
       margin: "10px",
       padding: "10px 20px",
       border: "none",
       borderRadius: "5px",
-      backgroundColor: "#007bff",
-      color: "#fff",
+      color: "#000",
       cursor: "pointer",
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
       transition: "background-color 0.3s, box-shadow 0.3s",
+      fontSize: "16px",
     },
     buttonDisabled: {
       backgroundColor: "#d6d6d6",
@@ -89,20 +86,26 @@ const ImageUploader = () => {
     },
     fileInput: {
       margin: "10px",
+      fontSize: "16px",
     },
     previewImage: {
       marginTop: "20px",
       maxWidth: "100%",
       maxHeight: "400px",
-      borderRadius: "10px", // Rounded corners for the image
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+      borderRadius: "10px",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
     },
     resultContainer: {
       marginTop: "20px",
-      padding: "10px",
-      borderRadius: "10px", // Rounded corners for result container
+      padding: "20px",
+      borderRadius: "10px",
       backgroundColor: "#fff",
-      boxShadow: "0 2px 5px rgba(0, 0, 0, 0.1)",
+      boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+      textAlign: "left",
+    },
+    resultText: {
+      whiteSpace: "pre-wrap",
+      wordBreak: "break-word",
     },
   };
 
@@ -149,7 +152,9 @@ const ImageUploader = () => {
         {result && (
           <div style={styles.resultContainer}>
             <h3>Result:</h3>
-            <pre>{JSON.stringify(result, null, 2)}</pre>
+            <pre style={styles.resultText}>
+              {JSON.stringify(result, null, 2)}
+            </pre>
           </div>
         )}
       </div>

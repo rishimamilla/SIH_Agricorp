@@ -1,0 +1,35 @@
+
+.crop-diseases-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.disease-card {
+  margin-bottom: 30px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+}
+
+.disease-card h2 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.disease-card h3 {
+  margin-top: 10px;
+  color: #333;
+}
+
+.disease-card ul {
+  padding-left: 20px;
+}
+
+.disease-card ul li {
+  margin-bottom: 5px;
+}
