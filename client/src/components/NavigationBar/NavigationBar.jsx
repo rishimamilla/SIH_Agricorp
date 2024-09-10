@@ -13,7 +13,7 @@ import IMAGES from "../../assets"; // Importing images from single "IMAGES" obje
 import { AuthState } from "../../context/AuthProvider";
 import ProfileModal from "../ProfileModal/ProfileModal";
 
-import "./NavigationBar.css";
+import "./NavigationBar.css"; // Assuming custom styles are in this file
 
 const NavigationBar = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -28,22 +28,37 @@ const NavigationBar = () => {
   };
 
   return (
-    <Navbar collapseOnSelect expand="md" variant="dark" id="nav">
+    <Navbar collapseOnSelect expand="md" variant="light" bg="light" id="nav">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
           <img
             alt="Crop Disease Predictor Logo"
             src={IMAGES.logo}
-            width="30"
-            height="30"
+            height="60"
             className="d-inline-block align-top"
           />
-          &nbsp;Crop Disease Predictor
+          <div className="title ms-2">Farm-Ease</div>
         </Navbar.Brand>
 
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
         <Navbar.Collapse className="justify-content-end">
+          {/* Add new Nav links here with text-dark class */}
+          <Nav className="me-auto text-dark">
+            <Nav.Link as={Link} to="/predict">
+              Predict Crop Disease
+            </Nav.Link>
+            <Nav.Link as={Link} to="/weather">
+              Weather Data
+            </Nav.Link>{" "}
+            <Nav.Link as={Link} to="/diseases">
+              Crop Diseases
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about">
+              About Us
+            </Nav.Link>
+          </Nav>
+
           {auth ? (
             <DropdownButton
               variant=""
