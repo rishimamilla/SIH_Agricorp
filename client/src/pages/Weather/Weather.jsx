@@ -1,17 +1,13 @@
-import React from 'react'
-import NavigationBar from '../../components/NavigationBar/NavigationBar'
-import "./Weather.css"
+import React from "react";
+import "./Weather.css";
 
 const Weather = () => {
   return (
     <>
-          <NavigationBar />
-          <br />
-          <center>
-              <h1>
-                  Real time Weather Data
-              </h1>
-          </center>
+      <br />
+      <center>
+        <h1>Real time Weather Data</h1>
+      </center>
       <div className="weather-container">
         <iframe
           width="650"
@@ -20,19 +16,19 @@ const Weather = () => {
           title="Windy Weather Map"
           allowFullScreen
         ></iframe>
-          </div>
-          <br />
+      </div>
+      <br />
       <div className="weather-container">
         <iframe
           width="650"
-                  height="187"
-                  title='forecast'
+          height="187"
+          title="forecast"
           src="https://embed.windy.com/embed.html?type=forecast&location=coordinates&detail=true&detailLat=17.360589&detailLon=78.4740613&metricTemp=default&metricRain=default&metricWind=default"
           frameborder="0"
         ></iframe>
       </div>
     </>
   );
-}
+};
 
-export default Weather
+export default Weather;

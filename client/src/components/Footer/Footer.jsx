@@ -6,6 +6,10 @@ import "./Footer.css"; // Include a CSS file for custom styles
 const Footer = () => {
   return (
     <footer className="footer">
+      <br />
+      <br />
+      <br />
+      <br />
       <Container>
         <Row className="justify-content-center text-center py-4">
           <Col md={4} className="mb-3">

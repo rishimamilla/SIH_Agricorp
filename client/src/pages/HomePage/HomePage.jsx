@@ -5,6 +5,8 @@ import { AuthState } from "../../context/AuthProvider";
 import { Notify } from "../../utils";
 import ImageUploader from "../../components/ImageUploader/ImageUploader";
 import { NavigationBar } from "../../components";
+import CropDiseases from "../CropDiseases/CropDiseases";
+import Weather from "../Weather/Weather";
 
 const HomePage = () => {
   const [privateMessage, setPrivateMessage] = useState("");
@@ -44,8 +46,11 @@ const HomePage = () => {
 
   return (
     <>
-      <NavigationBar/>
       <ImageUploader />
+      <br />
+      <Weather />
+      <br />
+      <CropDiseases />
     </>
   );
 };
